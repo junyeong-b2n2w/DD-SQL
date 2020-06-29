@@ -102,3 +102,14 @@ SELECT *
 FROM emp
 WHERE comm > 0
 ORDER BY comm desc, empno desc;
+
+
+SELECT *
+FROM emp
+WHERE mgr IS NOT NULL
+ORDER BY job, empno;
+
+SELECT *
+FROM emp
+WHERE deptno IN(10, 30) AND sal > 1500
+ORDER BY ename DESC;
