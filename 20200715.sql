@@ -1,3 +1,4 @@
+
 CREATE INDEX idx_nu_emp_02 ON emp (job);
 
 EXPLAIN PLAN FOR
