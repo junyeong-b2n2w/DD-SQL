@@ -120,3 +120,27 @@ FROM emp
 WHERE sal BETWEEN 0 AND 10000
 AND deptno = 30;
 
+
+SELECT ROWID, emp.*
+FROM emp;
+
+CREATE INDEX idx_emp_001 ON emp (deptno);
+
+DROP INDEX idx_emp_001;
+
+EXPLAIN PLAN FOR
+SELECT *
+FROM emp, dept
+WHERE emp.deptno = dept.deptno
+AND emp.deptno = 20
+AND emp.empno IN (7902, 7876);
+
+
+SELECT *
+FROM TABLE (dbms_xplan.display);
+
+
+
+CREATE UNIQUE INDEX idx_u_emp_0001 ON emp (empno);
+CREATE INDEX idx_u_emp_0002 ON emp (deptno);
+CREATE UNIQUE INDEX idx_u_dept_0001 ON dept (deptno);
